@@ -6,14 +6,26 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                Navigation link
+                <button className="nav-link fakeLink"
+                    onClick={() => {
+                        navigate('/games')
+                    }}
+                >Games</button>
             </li>
             <li className="navbar__item">
-                Navigation link
+                <button className="nav-link fakeLink"
+                    onClick={() => {
+                        navigate('/events')
+                    }}
+                >Events</button>
             </li>
-            <li className="navbar__item">
-                Navigation link
-            </li>
+{/*             <li className="navbar__item">
+                <button className="nav-link fakeLink"
+                    onClick={() => {
+                        navigate('/games/new')
+                    }}
+                >New Game</button>
+            </li> */}
             {
                 (localStorage.getItem("lu_token") !== null) ?
                     <li className="nav-item">
@@ -30,6 +42,12 @@ export const NavBar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/register">Register</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/games">Games</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/events">Events</Link>
                         </li>
                     </>
             }        </ul>
